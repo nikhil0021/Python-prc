@@ -13,7 +13,7 @@ def click(n):
         chance = "X"
     else:
         chance = "O"
-    button_lis[n-1].configure(state=DISABLED, text=chance, relief=SUNKEN)
+    button_lis[n-1].configure(state=DISABLED, text=chance, relief=RAISED)
     a += 1
     check_res(a)
 
@@ -24,35 +24,31 @@ def restart_program():
 
 
 def check_res(a):
-    if (button_lis[0]['text'] == 'X' and button_lis[1]['text'] == 'X' and button_lis[2]['text'] == 'X' or
-            button_lis[3]['text'] == 'X' and button_lis[4]['text'] == 'X' and button_lis[5]['text'] == 'X' or
-            button_lis[6]['text'] == 'X' and button_lis[7]['text'] == 'X' and button_lis[8]['text'] == 'X' or
-            button_lis[0]['text'] == 'X' and button_lis[4]['text'] == 'X' and button_lis[8]['text'] == 'X' or
-            button_lis[2]['text'] == 'X' and button_lis[4]['text'] == 'X' and button_lis[6]['text'] == 'X' or
-            button_lis[0]['text'] == 'X' and button_lis[1]['text'] == 'X' and button_lis[2]['text'] == 'X' or
-            button_lis[0]['text'] == 'X' and button_lis[3]['text'] == 'X' and button_lis[6]['text'] == 'X' or
-            button_lis[1]['text'] == 'X' and button_lis[4]['text'] == 'X' and button_lis[7]['text'] == 'X' or
-            button_lis[6]['text'] == 'X' and button_lis[5]['text'] == 'X' and button_lis[8]['text'] == 'X'):
+    if ((button_lis[0]['text'] == 'X' and button_lis[1]['text'] == 'X' and button_lis[2]['text'] == 'X')or
+            (button_lis[3]['text'] == 'X' and button_lis[4]['text'] == 'X' and button_lis[5]['text'] == 'X') or
+            (button_lis[6]['text'] == 'X' and button_lis[7]['text'] == 'X' and button_lis[8]['text'] == 'X') or
+            (button_lis[0]['text'] == 'X' and button_lis[4]['text'] == 'X' and button_lis[8]['text'] == 'X')or
+            (button_lis[2]['text'] == 'X' and button_lis[4]['text'] == 'X' and button_lis[6]['text'] == 'X')or
+            (button_lis[0]['text'] == 'X' and button_lis[3]['text'] == 'X' and button_lis[6]['text'] == 'X')or
+            (button_lis[1]['text'] == 'X' and button_lis[4]['text'] == 'X' and button_lis[7]['text'] == 'X')or
+            (button_lis[2]['text'] == 'X' and button_lis[5]['text'] == 'X' and button_lis[8]['text'] == 'X')):
         tkinter.messagebox.showinfo("Tic-Tac-Toe", "Player A Won the match")
         if tkinter.messagebox.askretrycancel("Congratulations Player A", "Do you wanna Play again!!"):
             restart_program()
-            # os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
         else:
             win_root.destroy()
 
-    elif (button_lis[0]['text'] == 'O' and button_lis[1]['text'] == 'O' and button_lis[2]['text'] == 'O' or
-            button_lis[3]['text'] == 'O' and button_lis[4]['text'] == 'O' and button_lis[5]['text'] == 'O' or
-            button_lis[6]['text'] == 'O' and button_lis[7]['text'] == 'O' and button_lis[8]['text'] == 'O' or
-            button_lis[0]['text'] == 'O' and button_lis[4]['text'] == 'O' and button_lis[8]['text'] == 'O' or
-            button_lis[2]['text'] == 'O' and button_lis[4]['text'] == 'O' and button_lis[6]['text'] == 'O' or
-            button_lis[0]['text'] == 'O' and button_lis[1]['text'] == 'O' and button_lis[2]['text'] == 'O' or
-            button_lis[0]['text'] == 'O' and button_lis[3]['text'] == 'O' and button_lis[6]['text'] == 'O' or
-            button_lis[1]['text'] == 'O' and button_lis[4]['text'] == 'O' and button_lis[7]['text'] == 'O' or
-            button_lis[6]['text'] == 'O' and button_lis[5]['text'] == 'O' and button_lis[8]['text'] == 'O'):
+    elif ((button_lis[0]['text'] == 'O' and button_lis[1]['text'] == 'O' and button_lis[2]['text'] == 'O') or
+          (button_lis[3]['text'] == 'O' and button_lis[4]['text'] == 'O' and button_lis[5]['text'] == 'O') or
+          (button_lis[6]['text'] == 'O' and button_lis[7]['text'] == 'O' and button_lis[8]['text'] == 'O')or
+          (button_lis[0]['text'] == 'O' and button_lis[4]['text'] == 'O' and button_lis[8]['text'] == 'O') or
+          (button_lis[2]['text'] == 'O' and button_lis[4]['text'] == 'O' and button_lis[6]['text'] == 'O') or
+          (button_lis[0]['text'] == 'O' and button_lis[3]['text'] == 'O' and button_lis[6]['text'] == 'O') or
+          (button_lis[1]['text'] == 'O' and button_lis[4]['text'] == 'O' and button_lis[7]['text'] == 'O') or
+          (button_lis[2]['text'] == 'O' and button_lis[5]['text'] == 'O' and button_lis[8]['text'] == 'O')):
         tkinter.messagebox.showinfo("Tic-Tac-Toe", "Player B won the match")
         if tkinter.messagebox.askretrycancel("Congratulations Player B", "Do you wanna Play again!!"):
             restart_program()
-            # os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
         else:
             win_root.destroy()
 
@@ -60,7 +56,6 @@ def check_res(a):
         tkinter.messagebox.showinfo("Tic-Tac-Toe", "It is a Tie")
         if tkinter.messagebox.askretrycancel("Oopss!!!", "Do you wanna Play again!!"):
             restart_program()
-            # os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
         else:
             win_root.destroy()
 

@@ -33,8 +33,7 @@ def quit_win():
 win_root = Tk()
 win_root.title("Diwali Celebration")
 
-
-fnt = font.Font(family="Amaze", size=20, weight="bold")
+fnt = font.Font(family="Allegro BT", size=20, weight="normal")
 lab1 = tk.Label(win_root, text="Enjoy mine randomness!!", font=fnt)
 lab1.grid(row=0, column=0, columnspan=6, padx=10, pady=10)
 
